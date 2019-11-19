@@ -1,0 +1,213 @@
+@font-face { font-family: 'Avenir Regular'; src: url("../font/avenir.ttf"); }
+
+@font-face { font-family: 'Avenir bold'; src: url("../font/avenir-black.ttf"); font-weight: 900; }
+
+html, body { -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+*, *:before, *:after { -webkit-box-sizing: inherit; box-sizing: inherit; font-smooth: subpixel-antialiased; }
+
+body { background-color: #555; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; padding: 3rem; color: #000; font-family: 'Avenir Regular' sans-serif; font-size: 18px; }
+
+body shadow-page { display: block; width: 100%; height: 1300px; max-width: 1000px; -webkit-box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5); box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5); overflow: hidden; border-radius: 10px; }
+
+body download-pdf { background-color: #fff; width: 100%; max-width: 400px; position: fixed; top: 3.5rem; right: 1rem; border-radius: 10px; -webkit-box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5); box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5); padding: 2rem; }
+
+body download-pdf button { outline: 0; border: none; background-color: #000; color: #fff; display: -webkit-inline-box; display: -ms-inline-flexbox; display: inline-flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; padding: 0.75rem 2rem; border-radius: 2rem; }
+
+body [page-pdf] { position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; -ms-flex-line-pack: start; align-content: flex-start; width: 100%; max-width: 100%; min-height: 100%; padding: 4rem; background: #fff url("/malla.jpg") no-repeat center; }
+
+body [page-pdf] header, body [page-pdf] section, body [page-pdf] footer { width: 100%; z-index: 5; }
+
+body [page-pdf] footer { -ms-flex-item-align: end; align-self: flex-end; }
+
+body [page-pdf] .bancos { position: absolute; bottom: 0; left: 0; width: 100%; height: auto; opacity: .3; -o-object-fit: contain; object-fit: contain; }
+
+body [page-pdf] payment-info { background-color: white; border-radius: 10px; padding: 2rem; border: 1px dashed black; width: 400px; }
+
+body [page-pdf] transfer-info { margin: 2rem 0 0 0; }
+
+body [page-pdf] transfer-info widget-info { width: 100%; background-color: rgba(0, 0, 0, 0.05); padding: 2rem; border-radius: 10px; }
+
+body [page-pdf] transfer-info widget-info strong span { -webkit-box-flex: 1; -ms-flex: 1; flex: 1; }
+
+body h1, body h2, body h3, body h4, body h5, body h6, body strong, body b { margin: 0; padding: 0; font-family: 'Avenir bold'; }
+
+body span, body p, body a, body cite, body address, body button, body small, body micro, body input, body select, body textarea, body i, body ul, body ol { font-family: 'Avenir Regular'; font-size: inherit; margin: 0; }
+
+body a { text-decoration: none; color: inherit; }
+
+body small { font-size: 80%; }
+
+body micro { font-size: 60%; }
+
+body [upper] { text-transform: uppercase; }
+
+body [lower] { text-transform: lowercase; }
+
+body [justify] { display: block; text-align: justify; }
+
+body [light] { font-family: 'Avenir Regular'; font-weight: normal; }
+
+.flex { display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+.flex.column { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
+
+.flex.nowrap { -ms-flex-wrap: nowrap; flex-wrap: nowrap; }
+
+.flex.center { -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+.flex.separated { -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+
+.flex.distribute { -ms-flex-pack: distribute; justify-content: space-around; }
+
+.flex.top { -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
+
+.flex.right { -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
+
+.flex.down { -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; }
+
+.flex.h-center { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+.flex.v-center { -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+.op-1 { opacity: 1; }
+
+.op-2 { opacity: 1; }
+
+.op-3 { opacity: 1; }
+
+.op-4 { opacity: 1; }
+
+.op-5 { opacity: 1; }
+
+.op-6 { opacity: 1; }
+
+.op-7 { opacity: 1; }
+
+.op-8 { opacity: 1; }
+
+.op-9 { opacity: 1; }
+
+.op-10 { opacity: 1; }
+
+.m-1 { margin: 0.5rem; }
+
+.mt-1 { margin-top: 0.5rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+
+.m-2 { margin: 1rem; }
+
+.mt-2 { margin-top: 1rem; }
+
+.mb-2 { margin-bottom: 1rem; }
+
+.m-3 { margin: 1.5rem; }
+
+.mt-3 { margin-top: 1.5rem; }
+
+.mb-3 { margin-bottom: 1.5rem; }
+
+.m-4 { margin: 2rem; }
+
+.mt-4 { margin-top: 2rem; }
+
+.mb-4 { margin-bottom: 2rem; }
+
+.m-5 { margin: 2.5rem; }
+
+.mt-5 { margin-top: 2.5rem; }
+
+.mb-5 { margin-bottom: 2.5rem; }
+
+.m-6 { margin: 3rem; }
+
+.mt-6 { margin-top: 3rem; }
+
+.mb-6 { margin-bottom: 3rem; }
+
+.m-7 { margin: 3.5rem; }
+
+.mt-7 { margin-top: 3.5rem; }
+
+.mb-7 { margin-bottom: 3.5rem; }
+
+.m-8 { margin: 4rem; }
+
+.mt-8 { margin-top: 4rem; }
+
+.mb-8 { margin-bottom: 4rem; }
+
+.m-9 { margin: 4.5rem; }
+
+.mt-9 { margin-top: 4.5rem; }
+
+.mb-9 { margin-bottom: 4.5rem; }
+
+.m-10 { margin: 5rem; }
+
+.mt-10 { margin-top: 5rem; }
+
+.mb-10 { margin-bottom: 5rem; }
+
+.p-1 { padding: 0.5rem; }
+
+.pt-1 { padding-top: 0.5rem; }
+
+.pb-1 { padding-bottom: 0.5rem; }
+
+.p-2 { padding: 1rem; }
+
+.pt-2 { padding-top: 1rem; }
+
+.pb-2 { padding-bottom: 1rem; }
+
+.p-3 { padding: 1.5rem; }
+
+.pt-3 { padding-top: 1.5rem; }
+
+.pb-3 { padding-bottom: 1.5rem; }
+
+.p-4 { padding: 2rem; }
+
+.pt-4 { padding-top: 2rem; }
+
+.pb-4 { padding-bottom: 2rem; }
+
+.p-5 { padding: 2.5rem; }
+
+.pt-5 { padding-top: 2.5rem; }
+
+.pb-5 { padding-bottom: 2.5rem; }
+
+.p-6 { padding: 3rem; }
+
+.pt-6 { padding-top: 3rem; }
+
+.pb-6 { padding-bottom: 3rem; }
+
+.p-7 { padding: 3.5rem; }
+
+.pt-7 { padding-top: 3.5rem; }
+
+.pb-7 { padding-bottom: 3.5rem; }
+
+.p-8 { padding: 4rem; }
+
+.pt-8 { padding-top: 4rem; }
+
+.pb-8 { padding-bottom: 4rem; }
+
+.p-9 { padding: 4.5rem; }
+
+.pt-9 { padding-top: 4.5rem; }
+
+.pb-9 { padding-bottom: 4.5rem; }
+
+.p-10 { padding: 5rem; }
+
+.pt-10 { padding-top: 5rem; }
+
+.pb-10 { padding-bottom: 5rem; }
+
+/*# sourceMappingURL=app.css.map */

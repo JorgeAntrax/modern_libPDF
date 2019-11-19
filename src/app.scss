@@ -1,0 +1,232 @@
+@font-face {
+    font-family: 'Avenir Regular';
+    src: url("../font/avenir.ttf");
+}
+
+@font-face {
+    font-family: 'Avenir bold';
+    src: url("../font/avenir-black.ttf");
+    font-weight: 900;
+}
+
+html,
+body {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    font-smooth: subpixel-antialiased;
+}
+
+body {
+    background-color: #555;
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    color: #000;
+    font-family: 'Avenir Regular' sans-serif;
+    font-size: 18px;
+    shadow-page {
+        display: block;
+        width: 100%;
+        height: 1300px;
+        max-width: 1000px;
+        box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        border-radius: 10px;
+    }
+    download-pdf {
+        background-color: #fff;
+        width: 100%;
+        max-width: 400px;
+        position: fixed;
+        top: 3.5rem;
+        right: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+        padding: 2rem;
+        button {
+            outline: 0;
+            border: none;
+            background-color: #000;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 2rem;
+            border-radius: 2rem;
+        }
+    }
+    [page-pdf] {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        align-content: flex-start;
+        width: 100%;
+        max-width: 100%;
+        min-height: 100%;
+        padding: 4rem;
+        background: #fff url('/malla.jpg') no-repeat center;
+        header,
+        section,
+        footer {
+            width: 100%;
+            z-index: 5;
+        }
+        footer {
+            align-self: flex-end;
+        }
+        .bancos {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            opacity: .3;
+            object-fit: contain;
+        }
+        payment-info {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            border: 1px dashed black;
+            width: 400px;
+        }
+        transfer-info {
+            margin: 2rem 0 0 0;
+            widget-info {
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.05);
+                padding: 2rem;
+                border-radius: 10px;
+                strong span {
+                    flex: 1;
+                }
+            }
+        }
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+        margin: 0;
+        padding: 0;
+        font-family: 'Avenir bold';
+    }
+    span,
+    p,
+    a,
+    cite,
+    address,
+    button,
+    small,
+    micro,
+    input,
+    select,
+    textarea,
+    i,
+    ul,
+    ol {
+        font-family: 'Avenir Regular';
+        font-size: inherit;
+        margin: 0;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    small {
+        font-size: 80%;
+    }
+    micro {
+        font-size: 60%;
+    }
+    [upper] {
+        text-transform: uppercase;
+    }
+    [lower] {
+        text-transform: lowercase;
+    }
+    [justify] {
+        display: block;
+        text-align: justify;
+    }
+    [light] {
+        font-family: 'Avenir Regular';
+        font-weight: normal;
+    }
+}
+
+// grid
+.flex {
+    display: flex;
+    &.column {
+        flex-direction: column;
+    }
+    &.nowrap {
+        flex-wrap: nowrap;
+    }
+    &.center {
+        align-items: center;
+        justify-content: center;
+    }
+    &.separated {
+        justify-content: space-between;
+    }
+    &.distribute {
+        justify-content: space-around;
+    }
+    &.top {
+        align-items: flex-start;
+    }
+    &.right {
+        justify-content: flex-end;
+    }
+    &.down {
+        align-items: flex-end;
+    }
+    &.h-center {
+        justify-content: center;
+    }
+    &.v-center {
+        align-items: center;
+    }
+}
+
+@for $i from 1 through 10 {
+    .op-#{($i*1) } {
+        opacity: 1;
+    }
+}
+
+@for $i from 1 through 10 {
+    .m-#{($i*1) } {
+        margin: #{($i*0.5)}rem;
+    }
+    .mt-#{($i*1) } {
+        margin-top: #{($i*0.5)}rem;
+    }
+    .mb-#{($i*1) } {
+        margin-bottom: #{($i*0.5)}rem;
+    }
+}
+
+@for $i from 1 through 10 {
+    .p-#{($i*1) } {
+        padding: #{($i*0.5)}rem;
+    }
+    .pt-#{($i*1) } {
+        padding-top: #{($i*0.5)}rem;
+    }
+    .pb-#{($i*1) } {
+        padding-bottom: #{($i*0.5)}rem;
+    }
+}

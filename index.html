@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="build/app.css">
+    <link rel="stylesheet" href="build/icons.css">
+    <script async src="build/html2canvas.js"></script>
+    <!-- <script async src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+    <script async defer src="build/app.js"></script>
+    <title>Transaction PDF Download</title>
+</head>
+
+<body>
+    <shadow-page>
+        <span page-pdf>
+            <header class="mb-8">
+                <div class="flex v-center separated">
+                    <span class="icon-oh-osgo font:large" style="font-size: 2rem;"></span>
+        <span class="icon-oh-buho" style="font-size: 4rem; display:inline-flex; position: absolute; right:2rem; top:2rem;"></span>
+        </div>
+        <small class="op-6" light>Transferencia Interbancaria SPEI</small>
+        </header>
+
+        <section class="mb-4 pb-4" style="border-bottom:1px solid black;">
+            <article class="flex separated nowrap">
+                <info-customer class="flex column">
+                    <h3 upper class="mb-1">ORDEN | {{invoice}}</h3>
+                    <strong>Nombre del cliente:</strong>
+                    <p>{{name}}</p>
+
+                    <strong class="mt-2">Fecha del pedido:</strong>
+                    <p>{{initDate}}</p>
+
+                    <strong class="mt-2">Fecha limite de pago:</strong>
+                    <p>{{limitDate}}</p>
+                </info-customer>
+                <div class="flex column down" style="width:60%;">
+                    <payment-info class="flex column">
+                        <h3 light class="op-7">Total a pagar:</h3>
+                        <h1 style="font-size: 1.75rem;">$ {{amount}} MXN</h1>
+                    </payment-info>
+                    <micro class="op-5 mt-1 flex right">El pago debe de realizarse en una sola exhibición.</micro>
+
+                    <div class="flex separated v-center mt-5">
+                        <small>
+                                <a style="padding:0 1rem;" href="https://osgohome.com">osgohome.com</a>
+                            </small>
+                        <small>
+                                <a style="padding:0 1rem;" href="mailto://info@osgohome.com">info@osgohome.com</a>
+                            </small>
+                        <small>
+                                <a style="padding:0 0 0 1rem;" href="tel:866-619-5552">866-619-5552</a>
+                            </small>
+                    </div>
+                </div>
+            </article>
+            <article class="contact flex"></article>
+        </section>
+        <small>
+                <transfer-info class="flex nowrap separated">
+
+                    <widget-info class="flex column" style="margin-right:2rem;">
+                        <strong>Desde BBVA Bancomer</strong>
+                        <p justify>1. Dentro del menú "Pagar" seleccione la opción "De servicios" e ingrese el siguiente "Número de convenio CIE"</p>
+                        <strong class="mt-2">Número de convenio CIE: <span light>{{token}}</span></strong>
+
+                        <p class="mt-2 mb-2" jutify>2. Ingrese los datos de registro para concluir con la operación.</p>
+
+                        <strong class="flex"><span>Referencia:</span> <span light>{{refer}}</span></strong>
+                        <strong class="flex"><span>Importe:</span> <span light>$ {{amount}} MXN</span></strong>
+                        <strong class="flex"><span>Concepto:</span> <span light>Concepto de pago X</span></strong>
+                    </widget-info>
+                    <widget-info class="flex column">
+                        <strong>Desde cualquier otro banco</strong>
+                        <p justify>1. Ingresa a la sección de transferencias y pagos o pagos a otros bancos y proporciona los datos de transferencia</p>
+                        <strong class="mt-2 flex">
+                            <span>Beneficiario:</span>
+                            <span light>OSGO HOME</span>
+                        </strong>
+                        <strong class="flex">
+                            <span>Banco destino:</span>
+                            <span light>BBVA Bancomer</span>
+                        </strong>
+                        <strong class="flex">
+                            <span>Clabe:</span>
+                            <span light>{{account}}</span>
+                        </strong>
+                        <strong class="flex">
+                            <span>Concepto de pago:</span>
+                            <span light>{{refer}}</span>
+                        </strong>
+                        <strong class="flex">
+                            <span>Referencia:</span>
+                            <span light>{{token}}</span>
+                        </strong>
+                        <strong class="flex">
+                            <span>Importe:</span>
+                            <span light>$ {{amount}} MXN</span>
+                        </strong>
+                    </widget-info>
+
+                </transfer-info>
+            </small>
+
+        <small class="mt-2 mb-2">Si tienes dudas comunicate a OSGO HOME al teléfono (915) 219-8497 o al correo info@osgohome.com</small>
+
+        <img src="bancos.jpg" class="bancos">
+
+        <footer>
+            <micro justify>Todas las ventas son finales, no hay devoluciones, o los reembolsos están permitidos en los artículos mencionados anteriormente. esta factura Los artículos anteriores solo están garantizados por 30 días contra defectos de fábrica. Toda garantia
+                Las contiendas deben ir acompañadas de la factura original dada la fecha de la compra. OSGO HOME no es de ninguna manera responsable por subsiguientes, incidentales, agravios, lesiones o daños causados ​​por OSGO HOME, su Empleados, afiliados,
+                artículos o cualquier otro elemento implícito de OSGO HOME. Si el cliente desea cancelar En el pedido, el cliente incurrirá en una tarifa de cancelación del 30% por el importe total de la factura. Todos los pedidos tomarán un promedio
+                de 2 a 8 semanas para que se realice la entrega de los artículos anteriores. Si el articulo es agotado o descontinuado, los clientes están obligados a seleccionar otro artículo de igual valor. Por Al firmar este documento, estoy de acuerdo
+                con todos los términos declarados e implícitos.</micro>
+        </footer>
+        </span>
+    </shadow-page>
+
+    <download-pdf class="flex column">
+        <h2 light class="mb-4">Para finalizar el proceso de compra descarga este recibo para que puedas realizar la tranferencia bancaria</h2>
+        <button data-invoice="{{invoice}}">Descargar recibo</button>
+    </download-pdf>
+
+</body>
+
+</html>
